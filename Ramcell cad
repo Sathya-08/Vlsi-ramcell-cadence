@@ -1,0 +1,16 @@
+module ram (
+input clk,
+input [5:0] ad dr,
+input [7:0] d ata_in,
+input write_en,
+output [7:0 ] data_out
+);
+reg [5:0 ]read_addr;
+reg [7:0 ]ram [63 :0];
+always @ (posedg e clk)
+begin
+if (write_en==1 )
+ram [ad dr]=data_in;
+read _ad dr=addr;
+end
+assign data_out=ram [read _ad dr];
